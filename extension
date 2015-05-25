@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+class FileExtension
+  def self.ext(text, ext)
+    text.end_with?(ext) ? text : text.sub(/\..*($|\Z)/, "") + "." + ext
+  end
+end
+
+print FileExtension.ext($stdin.read.chomp, ARGV[0]) if $0 == __FILE__
