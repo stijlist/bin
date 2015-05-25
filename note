@@ -1,0 +1,4 @@
+#!/bin/sh
+
+read notename
+vim "Dropbox/Notes/$notename"

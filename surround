@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# Surrounds some input text with a given character. 
+
+# Currently, you pass it the character you want to surround with as the first
+# argument, with your desired input text on stdin, and surround does all the
+# rest of the work. Knows about characters with opposites, e.g.
+# opening/closing parentheses and will place them in the correct order.
+
+class Surround
+  def self.surround(char, input)
+    twin_chars = { '{' => '}', '[' => ']', '(' => ')', '<' => '>' }
+    reverse_twins = twin_chars.invert
+
+    if (twin = twin_chars[char])
+      char + input + twin
+    elsif (inverse = reverse_twins[char])
+      inverse + input + char
+    else
+      char + input + char
+    end
+  end
+end
+
+if $0 == __FILE__
+  print Surround.surround(ARGV[0], $stdin.read.chomp)
+  # print Surround.surround(ARGV[0], ARGV[1])
+end
