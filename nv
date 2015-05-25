@@ -1,2 +1,2 @@
 #!/bin/sh
-while true; do vim "$(find /Users/bert/Dropbox/Notes -type f | selecta --passthrough)"; done
+while true; do vim "$(ls -t /Users/bert/Dropbox/Notes | selecta --passthrough)"; done
