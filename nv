@@ -1,4 +1,4 @@
 #!/bin/sh
 while true; do 
-  vim "$(ls -t /Users/bert/Dropbox/Notes | selecta --passthrough | extension txt)"
+  vim ~/Dropbox/Notes/"$(ls -t ~/Dropbox/Notes | selecta --passthrough)"
 done
