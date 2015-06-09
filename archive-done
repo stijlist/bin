@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+# wip
+class Archiver
+  def self.archive_done(lines)
+    groups = lines.reduce({ active: [], done: [] }) do |m, line|
+      (line.match(/\@done/) ? m.done : m.active) << line unless line.match(/Archive:/)
+    end
+    groups.active << "Archive:" << groups.done
+  end
+end
+
+if $0 == __FILE__
+  puts Archiver.archive_done($stdin.readlines)
+end

@@ -1,2 +1,2 @@
 #!/bin/sh
-qemu-system-x86_64 /Users/bert/qemu/archimage
+qemu-system-x86_64 /Users/bert/qemu/archlinux.iso
