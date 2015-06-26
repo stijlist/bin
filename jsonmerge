@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'json'
+puts ARGF.reduce({}) {|m, s| m.merge(JSON.parse(s)) }.to_json
