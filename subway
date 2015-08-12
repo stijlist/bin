@@ -1,0 +1,6 @@
+#!/bin/sh
+# `subway`: add any youtube-dl compatible video URL to iTunes
+# "how to automatically add to itunes": https://support.apple.com/en-us/HT201970
+
+itunes='~/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized/'
+youtube-dl $1 -o "$itunes%(title)s"
