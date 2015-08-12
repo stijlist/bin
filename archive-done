@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
-# wip
 class Archiver
   def self.archive_done(lines)
     groups = lines.reduce({ active: [], done: [] }) do |m, line|
-      (line.match(/\@done/) ? m.done : m.active) << line unless line.match(/Archive:/)
+      (line.match(/\@done/) ? m[:done] : m[:active]) << line unless line.match(/Archive:/)
+      m
     end
-    groups.active << "Archive:" << groups.done
+    (groups[:active] << "Archive:\n" << groups[:done]).join
   end
 end
 
