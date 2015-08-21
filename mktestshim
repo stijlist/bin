@@ -1,0 +1,2 @@
+#!/bin/sh
+echo '#!/bin/sh' > ./test.sh && $EDITOR test.sh
