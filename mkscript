@@ -1,0 +1,2 @@
+#!/bin/sh
+vim ~/bin/$1 && chmod +x ~/bin/$1
