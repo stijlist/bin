@@ -1,6 +1,0 @@
-#!/bin/sh
-
-fifo="/tmp/$(uuidgen)"
-mkfifo "$fifo"
-while true; do cat "$fifo"; done | sbt > "$1" &
-echo "$fifo"
