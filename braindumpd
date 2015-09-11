@@ -3,9 +3,8 @@
 NOTES="/Users/bert/Dropbox/Notes"
 INTERVAL=60
 
-set -e
 (cd $NOTES && while true; do
   sleep $INTERVAL
-  git add -A 2>&1 >> /dev/null
-  git commit -m "Automated commit via `braindumpd`." 2>&1 >> /dev/null
+  git add -A
+  git commit -m "Automated commit via braindumpd." 
 done)

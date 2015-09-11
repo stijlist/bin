@@ -1,4 +1,4 @@
 #!/bin/sh
 while true; do 
-  $EDITOR ~/Dropbox/Notes/"$(ls -t ~/Dropbox/Notes | selecta --passthrough | extension .txt)"
+  $EDITOR ~/Dropbox/Notes/"$(ls -t ~/Dropbox/Notes | selecta --passthrough)"
 done
