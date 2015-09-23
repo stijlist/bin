@@ -1,2 +1,0 @@
-#!/bin/sh
-rlwrap java -cp ~/jars/clojure-1.7.0-RC1.jar clojure.main
