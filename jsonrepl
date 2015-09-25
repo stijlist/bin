@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+var usage = 'Usage: `jsonrepl <inputfile>`'
+var inputfile = process.argv[2]
+
+if (inputfile) require('repl').start('js> ').context.data = 
+  JSON.parse(require('fs').readFileSync(inputfile, 'utf8'))
+else console.log(usage)
