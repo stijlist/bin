@@ -1,4 +1,4 @@
 #!/bin/sh
 while true; do 
-  $EDITOR ~/Dropbox/Notes/"$(ls -t ~/Dropbox/Notes | selecta --passthrough)"
+  $EDITOR ~/Dropbox/Notes/"$(ls -t ~/Dropbox/Notes | /Users/bert/Dropbox/source/selecta/selecta --scrolloff --passthrough)"
 done
