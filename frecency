@@ -1,0 +1,26 @@
+#!/usr/bin/awk -f
+# definition of frecency, as per `z.sh`:
+#
+# The rank of each entry is incremented  every  time  it  is accessed.  When
+# the sum of ranks is over 9000, all ranks are multiplied by 0.99. Entries with
+# a rank lower than 1 are forgotten.
+#
+# takes as input lines in the format "target1, target2, targetn" assuming the
+# input moves forward in chronological time
+
+{
+  sum += split($0, targets, " ")
+
+  for (target in targets)
+    frecency[target]++
+
+  if (sum > 9000)
+    sum *= 0.99; scaledowns++
+}
+
+END {
+  for (target in frecency) {
+    score = frecency[target] * (0.99 ** scaledowns)
+    print score, target
+  }
+}
