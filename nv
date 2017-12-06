@@ -1,4 +1,4 @@
 #!/bin/sh
 while true; do 
-  $EDITOR $NOTESDIR/"$(ls -t $NOTESDIR | selecta --scrolloff --passthrough)"
+  $EDITOR $NOTESDIR/"$(ls -t $NOTESDIR | selecta)"
 done
