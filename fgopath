@@ -1,0 +1,6 @@
+#!/bin/sh
+
+TARGET="$1"
+echo $TARGET
+# find $FUCHSIA_DIR/out/*-x86-64/gen/gopaths -type d -regex $TARGET
+find ~/fuchsia/out/*x86-64/gen/gopaths -type d -regex ".*$TARGET.*/src"
