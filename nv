@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
+if test -z $EDITOR || test -z $NOTESDIR; then
+  echo "Must provide \$EDITOR and \$NOTESDIR."
+  exit 1
+fi
+
 while true; do 
   $EDITOR $NOTESDIR/"$(ls -t $NOTESDIR | selecta)"
 done
