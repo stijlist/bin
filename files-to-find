@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [[ -e .find-filter ]]; then
+  cat .find-filter | xargs
+else
+  echo "."
+fi
+
